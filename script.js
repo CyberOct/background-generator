@@ -1,11 +1,14 @@
 var css = document.querySelector("h3");
 var color1 = document.querySelector(".color1");
 var color2 = document.querySelector(".color2");
+var direction = document.getElementById("direction");
 var body = document.getElementById("gradient");
 
 function setGradient() {
 	body.style.background = 
-	"linear-gradient(to right, " 
+	"linear-gradient("
+	+ direction.value
+	+", "
 	+ color1.value 
 	+ ", " 
 	+ color2.value 
@@ -17,3 +20,5 @@ function setGradient() {
 color1.addEventListener("input", setGradient);
 
 color2.addEventListener("input", setGradient);
+
+direction.addEventListener("click", setGradient);
